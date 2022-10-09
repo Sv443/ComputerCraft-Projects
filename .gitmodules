@@ -1,0 +1,6 @@
+[submodule "JokeAPI"]
+	path = JokeAPI
+	url = https://github.com/Sv443/JokeAPI_ComputerCraft.git
+[submodule "BotaniaPoolMeter"]
+	path = BotaniaPoolMeter
+	url = https://github.com/Sv443/Botania-Pool-Meter_ComputerCraft.git
