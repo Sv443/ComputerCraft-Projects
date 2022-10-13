@@ -4,3 +4,6 @@
 [submodule "BotaniaPoolMeter"]
 	path = BotaniaPoolMeter
 	url = https://github.com/Sv443/Botania-Pool-Meter_ComputerCraft.git
+[submodule "HttpExample"]
+	path = HttpExample
+	url = https://github.com/Sv443/ComputerCraftHttpExample.git
