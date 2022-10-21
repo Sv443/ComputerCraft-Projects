@@ -22,7 +22,7 @@ TODO:
 3. Open the computer and run these commands:
 ```
 label set billboard
-pastebin get UGxeuMGi startup
+pastebin get MsjGEG8T startup
 edit startup.lua
 ```
 4. Edit settings found at the top to your needs

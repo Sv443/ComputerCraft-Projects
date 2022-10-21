@@ -1,5 +1,5 @@
 -- in seconds - how often to update display & switch colors
-UPDATE_UPDATE_INTERVAL = 2
+UPDATE_INTERVAL = 2
 -- side of the PC that touches the monitor
 MONITOR_SIDE = "right"
 
