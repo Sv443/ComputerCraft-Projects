@@ -1,3 +1,8 @@
+## NTP-Clock
+A monitor-based digital NTP clock that displays the ingame time, day-of-week and number of days passed.
+
+<br>
+
 <img src="./screenshot-1.png" width="400" />
 <br>
 <img src="./screenshot-2.png" width="400" />

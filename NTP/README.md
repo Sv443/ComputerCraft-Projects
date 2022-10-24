@@ -1,17 +1,17 @@
 ## NTP (Network Time Protocol)
-I made these scripts to have an ingame modem-based NTP service that provides a uniform timestamp for passed ingame time.  
+I made these scripts to have an ingame modem-based NTP service that provides a uniform timestamp for ingame time.  
 In the future the real UTC timestamp could also be provided alongside.  
 
 <br>
 
 ## Scripts:
-- [NTP Server](./NTP-Server/) - Sends out the current ingame timestamp via wireless modem. Requirement for the other scripts.
-- [NTP Clock](./NTP-Clock/) - Monitor-based NTP clock and calendar for ingame time
+- [NTP Server](./NTP-Server/README.md) - Sends out the current ingame timestamp via wireless modem. Requirement for the other scripts.
+- [NTP Clock](./NTP-Clock/README.md) - Monitor-based NTP clock and calendar for ingame time
 
 <br><br>
 
 ## Ingame time standard:
-The [NTP Server](./NTP-Server/) needs to be placed once, in always loaded chunks.  
+The [NTP Server](./NTP-Server/README.md) needs to be placed once, in the spawn chunks or next to a chunk loader.  
 It will send out the current ingame timestamp once per tick on port 123.  
   
 ### Timestamp format:  
