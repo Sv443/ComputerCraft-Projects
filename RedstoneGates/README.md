@@ -1,5 +1,6 @@
 ## Redstone Gates:
 This is a collection of configurable redstone gates that run on a simple computer from ComputerCraft.  
+They only take up a single block and their input and output sides and other settings can be freely configured.  
 
 <br>
 
@@ -16,25 +17,25 @@ Afterwards, run the command `reboot` to automatically start the program.
 <br>
 
 ### Basic Gates:
-To install one of these gates, run `pastebin get code_here startup.lua`, where code is from one of the below:
+To install one of these gates, run one of the commands from below:
 
-| Gate | Pastebin Code |
+| Gate | Install command |
 | --- | --- |
-| AND | `uEnJy4R8` |
-| OR | `CizrcGFt` |
+| AND | `pastebin get uEnJy4R8 startup.lua` |
+| OR | `pastebin get CizrcGFt startup.lua` |
 | NAND | `-` |
 | NOR | `-` |
 | XOR | `-` |
 | XNOR | `-` |
-| NOT | `xeyAKMRp` |
+| NOT | `pastebin get xeyAKMRp startup.lua` |
 
 <br>
 
 ### Advanced Gates:
 These gates are a bit more advanced as they are stateful or have special functionality beyond simple logic.  
-To install one of these gates, run `pastebin get code_here startup.lua`, where code is from one of the below:
+To install one of these gates, run one of the commands from below:
 
-| Gate | Pastebin Code |
+| Gate | Install command |
 | --- | --- |
 | S/R Latch | `-` |
 | Pulse Extender | `-` |
