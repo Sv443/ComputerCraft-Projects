@@ -1,5 +1,6 @@
-## Discord Webhook
-This program shows how to send a message in a Discord channel by using the webhook feature.
+## Discord Send Message Example
+This program shows how to send a message in a Discord channel by using the webhook feature.  
+[Click here to view the code](./send-message-example.lua)
 
 <br>
 
@@ -14,7 +15,7 @@ Now install the program in Minecraft:
 2. Run these commands:
 ```
 label set discord_webhook
-pastebin get KTtk4AEX startup.lua
+pastebin get TGrUD56w startup.lua
 edit startup.lua
 ```
 3. Enter the webhook URL at the top, change the message content below and set the side at which the button is attached.  
