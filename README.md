@@ -10,6 +10,7 @@ This contains all of my ComputerCraft (Lua) projects
 - [Discord](./Discord/) - Various programs involving sending Discord messages from within Minecraft
 - [HttpExample](https://github.com/Sv443/ComputerCraftHttpExample) - Example code that shows how HTTP requests work in ComputerCraft
 - [JokeAPI](https://github.com/Sv443/JokeAPI_ComputerCraft) - Displays a joke on a monitor on interval
+- [Jukebox](./Jukebox/) - Converts real audio files into ComputerCraft programs, to be played in-game on a speaker
 - [NTP](./NTP/) - Network time system and timestamp format implemented in-game
     - [NTP-Server](./NTP/NTP-Server) - Serves an ingame timestamp via wireless modem
     - [NTP-Clock](./NTP/NTP-Clock) - A clock that displays the ingame time, day and day of the week

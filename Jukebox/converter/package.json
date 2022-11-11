@@ -1,0 +1,24 @@
+{
+  "name": "cc-jukebox",
+  "version": "0.1.0",
+  "description": "Converts real audio files into programs for the Minecraft mod \"ComputerCraft\", to be played in-game on a speaker",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "tsc && node out/index.js"
+  },
+  "author": "Sv443",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@types/prompts": "^2.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
+    "tslib": "^2.4.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "prompts": "^2.4.2",
+    "svcorelib": "^1.18.1"
+  }
+}
