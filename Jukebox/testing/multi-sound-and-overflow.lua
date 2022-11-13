@@ -8,6 +8,7 @@ function playNotes(instr, vol, pitches, transpose)
     if transpose == nil then
         transpose = 0
     end
+    local pitchesStr = ""
     for i, pitch in pairs(pitches) do
         local p = pitch + transpose * 12
         if p > 24 then
@@ -17,10 +18,41 @@ function playNotes(instr, vol, pitches, transpose)
             p = 24 - math.abs(p) % 24
         end
 
-        print(p)
         spk.playNote(instr, vol, math.floor(p))
+        pitchesStr = pitchesStr..math.floor(p).." "
     end
+    print("> chord: "..pitchesStr.."("..instr..")")
 end
 
-local pitches = {6, 10, 13}
-playNotes("harp", 3, pitches, 0)
+function playChords(instr, transpose)
+    local pitches = nil
+
+    if transpose == nil then
+        transpose = 0
+    end
+
+    pitches = {6, 10, 13}
+    playNotes(instr, 3, pitches, transpose)
+    os.sleep(0.5)
+
+    pitches = {8, 12, 15}
+    playNotes(instr, 3, pitches, transpose)
+    os.sleep(0.5)
+
+    pitches = {10, 14, 17}
+    playNotes(instr, 3, pitches, transpose)
+    os.sleep(0.5)
+
+    print()
+end
+
+
+playChords("harp")
+os.sleep(1)
+playChords("harp", 1)
+os.sleep(2)
+
+playChords("bell")
+os.sleep(1)
+playChords("bell", -1)
+
