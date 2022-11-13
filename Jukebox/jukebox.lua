@@ -3,6 +3,10 @@ local drv = peripheral.find("drive")
 
 -- #MARKER init
 
+while true do
+    loop()
+end
+
 function loop()
     local ev, side = os.pullEvent()
 
@@ -32,14 +36,16 @@ function diskInserted(side)
         end
 
         stopAudio()
-        playDiskAlbum(mountPath)
+
+        if not playDiskAlbum(mountPath) then
+            noDiskData(side)
+            return false
+        end
+
+        return true
     else
-        print()
-        print("The disk inserted on the "..side.." side doesn't contain data.")
-        print("Please follow the steps on this page to download music onto it:")
-        print("https://TODO")
-        print()
-        return nil
+        noDiskData(side)
+        return false
     end
 end
 
@@ -51,6 +57,16 @@ function diskEjected(side)
     else
         print(">> Ejected unnamed disk on "..side.." side")
     end
+
+    return true
+end
+
+function noDiskData(side)
+    print()
+    print("The disk inserted on the "..side.." side doesn't contain an album.")
+    print("Please follow the steps on this page to download music onto it:")
+    print("https://github.com/Sv443/ComputerCraft-Projects/tree/main/Jukebox")
+    print()
 end
 
 -- #MARKER music
@@ -96,15 +112,50 @@ end
 function playDiskAlbum(path)
     apiPath = path.."/album.lua"
     if fs.exists(apiPath) then
-        print("found album")
         os.loadAPI(apiPath)
 
-        printTable(album.ALBUM)
+        if type(album.JUKEBOX_ALBUM) ~= "table" then
+            return false
+        end
+
+        print(">> Found and loaded the album")
+
+        for idx=1, tableLen(album.JUKEBOX_ALBUM), 1 do
+            playSongInAlbum(idx)
+        end
 
         return true
     else
         return false
     end
+end
+
+-- plays the song at the provided index of the currently loaded album
+function playSongInAlbum(idx)
+    if type(album.JUKEBOX_ALBUM) ~= "table" then
+        return false
+    end
+
+    local song = album.JUKEBOX_ALBUM[idx]
+    if type(song) == "table" then
+        local songName = song[1]
+        local tracks = song[2]
+
+        if type(tracks) == "table" then
+            playTracks(tracks)
+            return true
+        end
+
+        return false
+    end
+    return false
+end
+
+-- plays all provided tracks on the speaker
+-- blocks code execution until the album ends
+-- TODO: add exit condition
+function playTracks(tracks)
+
 end
 
 -- #MARKER utils
@@ -145,11 +196,4 @@ function printTable(table, padding)
             print(spc..k .. ": " .. v)
         end
     end
-end
-
-
--- #MARKER init
-
-while true do
-    loop()
 end
