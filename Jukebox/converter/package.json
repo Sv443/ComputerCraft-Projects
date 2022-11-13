@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "description": "Converts real audio files into programs for the Minecraft mod \"ComputerCraft\", to be played in-game on a speaker",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
-    "start": "tsc && node out/index.js"
+    "start": "tsc && node out/index.js",
+    "test": "tsc && node out/test.js"
   },
   "author": "Sv443",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
     "@types/node": "^18.11.9",
     "@types/prompts": "^2.4.1",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
@@ -18,6 +21,9 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
+    "fs-extra": "^10.1.0",
+    "midi-file": "^1.2.3",
+    "midi-parser-js": "^4.0.4",
     "prompts": "^2.4.2",
     "svcorelib": "^1.18.1"
   }

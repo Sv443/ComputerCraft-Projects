@@ -39,6 +39,15 @@ mary
 
 <br>
 
+### Pre-converted albums:
+These are some albums I have already rearranged and converted:
+| Album | Pastebin code |
+| :-- | :-- |
+| Mary had a Little Computer | `TODO` |
+| DELTARUNE OST - My Castle Town | `TODO` |
+
+<br>
+
 ### Notes format:  
 The notes that make up the song are all defined in a 2D table.  
 The first dimension defines the order in which the notes are played, as well as the notes and their info in the second dimension.  
