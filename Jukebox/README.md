@@ -38,8 +38,8 @@ You can find all example projects of how noteblock sounds can be played in Compu
 These are some albums I have already rearranged and converted:
 | Album | Pastebin code |
 | :-- | :-- |
-| Mary had a Little Computer | `TODO` |
-| DELTARUNE OST - My Castle Town | `TODO` |
+| <b>Mary had a Little Computer</b> | `TODO` |
+| <b>DELTARUNE OST</b><br>&bull; My Castle Town | `TODO` |
 
 <br>
 
