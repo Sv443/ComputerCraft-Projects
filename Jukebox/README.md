@@ -30,7 +30,7 @@ You can download it [from here.](TODO: GH/releases/latest)
 <br>
 
 ### Example:
-You can find an example of how a series of noteblock sounds can be played in ComputerCraft [by clicking here.](./example.lua)  
+You can find an example of how a series of noteblock sounds can be played in ComputerCraft [by clicking here.](./converter/testing/)  
 Install and run the example by running these commands in a computer that has a speaker attached to it:
 ```
 pastebin get 78LBsvJe mary
