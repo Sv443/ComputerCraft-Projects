@@ -23,7 +23,6 @@
   "dependencies": {
     "fs-extra": "^10.1.0",
     "midi-file": "^1.2.3",
-    "midi-parser-js": "^4.0.4",
     "prompts": "^2.4.2",
     "svcorelib": "^1.18.1"
   }
