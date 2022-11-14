@@ -114,26 +114,26 @@ end
 -- vol:       sound volume
 -- pitches:   table of index and chord pitches
 -- transpose: transpose all notes by any positive or negative number of octaves and overflow automatically at <0 or >24
--- function playNotes(instr, vol, pitches, transpose)
---     if transpose == nil then
---         transpose = 0
---     end
---     local pitchesStr = ""
---     for i, pitch in pairs(pitches) do
---         local p = pitch + transpose * 12
---         if p > 24 then
---             p = p % 24
---         end
---         if p < 0 then
---             p = 24 - math.abs(p) % 24
---         end
+function playChord(instr, vol, pitches, transpose)
+    if transpose == nil then
+        transpose = 0
+    end
+    local pitchesStr = ""
+    for i, pitch in pairs(pitches) do
+        local p = pitch + transpose * 12
+        if p > 24 then
+            p = p % 24
+        end
+        if p < 0 then
+            p = 24 - math.abs(p) % 24
+        end
 
---         p = math.floor(p)
+        p = math.floor(p)
 
---         playNote(instr, vol, p)
---         pitchesStr = pitchesStr..p.." "
---     end
--- end
+        playNote(instr, vol, p)
+        pitchesStr = pitchesStr..p.." "
+    end
+end
 
 -- stops all audio currently playing
 function stopAudio()
@@ -167,8 +167,6 @@ function playSongInAlbum(idx)
     if type(album.JUKEBOX_ALBUM) ~= "table" then
         return false
     end
-    
-    printTable(album.JUKEBOX_ALBUM)
 
     local song = album.JUKEBOX_ALBUM[idx]
     if type(song) == "table" then
@@ -230,7 +228,7 @@ function playTracks(tracks)
                 local instr = track[1]
                 local note = track[2][indexes[trackIdx]]
 
-                -- since the index only increases, if no other note
+                -- since the index can only ever increase, if no other note
                 -- was found, we know that track must've ended
                 if note then
                     -- play the note when its frameDelta has passed
@@ -240,6 +238,8 @@ function playTracks(tracks)
 
                         lastNoteTick[trackIdx] = ticksPassed
                         indexes[trackIdx] = indexes[trackIdx] + 1
+
+                        -- TODO: add support for chords
 
                         -- log("Playing "..instr.." with pitch "..pitch.." @ "..ticksPassed)
                         playNote(instr, vol, pitch)

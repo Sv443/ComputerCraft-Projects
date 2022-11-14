@@ -1,6 +1,7 @@
 import * as midiMgr from "midi-file";
 import fs from "fs-extra";
 import { resolve } from "path";
+import { IntermediaryFormat } from "./types";
 
 
 export function parseMidiFile(path: string) {
@@ -11,6 +12,6 @@ export function parseMidiFiles(paths: string[]) {
     return paths.map(p => parseMidiFile(p));
 }
 
-export function parseIntermediary(midiData: midiMgr.MidiData): IntermediaryFormat {
+// export function parseIntermediary(midiData: midiMgr.MidiData): IntermediaryFormat {
 
-}
+// }
