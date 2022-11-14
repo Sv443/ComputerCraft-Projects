@@ -6,17 +6,25 @@
 --  |    |-- tracks
 --  |         |-- track 1
 --  |         |    |-- instrument name
---  |         |    |-- note tables
---  |         |         |-- { volume, pitch, tickDelta }
---  |         |         |-- ...
+--  |         |    |-- notes
+--  |         |         |-- chord 1
+--  |         |         |    |-- { volume, pitch, tickDelta }
+--  |         |         |    |-- { volume, pitch, tickDelta }
+--  |         |         |    |-- ...
+--  |         |         |-- chord 2
+--  |         |              |-- ...
 --  |         |-- track 2
---  |         |    |-- ...
+--  |              |-- ...
 --  |
 --  |-- song 2
---  |    |-- ...
+--       |-- ...
 
 
--- note table properties:
+-- there can only be one album per floppy disk
+-- there's 1 to n songs per album
+-- a song can have 1 to n tracks, which each have a designated instrument and a list of chords
+-- the chords are made up of 1 to n note tables
+-- each note table looks like this:
 -- 
 -- { volume: float, pitch: int, tickDelta: int }
 -- 
@@ -33,9 +41,9 @@ JUKEBOX_ALBUM = {
         "song 1 name",
         {
             -- track 1 instrument & notes:
-            {"harp", {{3, 6, 0}, {3, 6, 10}, {3, 7, 20}, {3, 7, 10},{3, 8, 5}, {3, 8, 5}}},
+            {"harp", {{{3, 6, 0}, {3, 6, 10}}, {{3, 7, 20}}, {{3, 7, 10}}, {{3, 8, 5}}, {{3, 8, 5}}}},
             -- track 2 instrument & notes:
-            {"banjo", {{2, 6, 0}, {2, 6, 10},                           {3, 8, 35}, {3, 8, 5}}}
+            {"banjo", {{{2, 6, 0}}}}
         }
     },
     -- song 2

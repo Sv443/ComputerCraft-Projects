@@ -231,7 +231,7 @@ function playTracks(tracks)
                 -- since the index can only ever increase, if no other note
                 -- was found, we know that track must've ended
                 if note then
-                    -- play the note when its frameDelta has passed
+                    -- play the note when its tickDelta has passed
                     if ticksPassed - lastNoteTick[trackIdx] == note[3] then
                         local vol = note[1]
                         local pitch = note[2]
@@ -244,7 +244,8 @@ function playTracks(tracks)
                         -- log("Playing "..instr.." with pitch "..pitch.." @ "..ticksPassed)
                         playNote(instr, vol, pitch)
                     end
-                elseif tracksFinished[trackIdx] == false then
+                elseif not tracksFinished[trackIdx] then
+                    tracksFinished[trackIdx] = true
                     tracksFinishedAmt = tracksFinishedAmt + 1
 
                     -- if all tracks finished playing, return and
