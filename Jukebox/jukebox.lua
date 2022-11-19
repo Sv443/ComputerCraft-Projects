@@ -59,7 +59,7 @@ function diskInserted(side)
             return false
         end
 
-        if label ~= nil and label.len > 0 then
+        if label ~= nil then
             log(">> Inserted disk #"..id..' with label "'..label..'" on '..side.." side")
             lastDiskName[side] = label
         else
