@@ -10,10 +10,14 @@ It doesn't change control rod settings and works by only turning the reactor on 
 
 ### Notes:
 
-- The numbers shown in the image above are the recommended settings but if you have a big reactor with a much higher reactivity you might want to lower the reset signal's trigger percentage on the left side.  
-  Inversely if you want to min-max or have a smaller reactor you might want to increase the reset signal's trigger percentage and decrease the set signal on the bottom side.  
+- The percentages shown in the image above are the recommended settings but if you have a big reactor with a much higher reactivity you might want to lower the reset signal's trigger percentage on the left side, because the reactor will produce more energy while it's turned off for a short while.  
+  Inversely if you want to min-max or have a smaller reactor you might want to increase the reset signal's trigger percentage and decrease the set signal percentage on the bottom side.  
   
 - If you want to tidy it up a bit more, you can set the `OUTPUT` variable to `back` and place the redstone port that controls whether the reactor is on or off on the back of the computer.  
+  Then, for symmetry, move the set signal at the bottom to the right side of the computer and set the `SET_INPUT_SIDE` variable to `right`.  
+  <details><summary><b>Click to see how this would look</b></summary>
+  <img alt="minimal setup" src="./minimal_setup.png" height="400" />
+  </details>
 
 <br>
 
