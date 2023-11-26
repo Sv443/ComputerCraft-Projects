@@ -7,9 +7,11 @@ This contains all of my ComputerCraft (Lua) projects
     - [TODO: ManaPoolStats](./Botania/ManaPoolStats/) - Collects statistics about how much mana is collected in which amount of time
     - [TODO: GourmaryllisControl](./Botania/GourmaryllisControl/) - Controls an optimal setup for 1 to infinite gourmaryllis flowers, generating mana from food
     - [TODO: ThermalilyControl](./Botania/ThermalilyControl/) - Controls a setup for 1 to infinite thermalily flowers, generating mana from lava
+- [Discord](./Discord/) - Various programs involving sending Discord messages from within Minecraft
 - [ExtremeReactors](./ExtremeReactors/) - Scripts for the [ExtremeReactors mod](https://modrinth.com/mod/extreme-reactors)
     - [ReactorControl](./ExtremeReactors/ReactorControl/) - Simple program to control a reactor with little efficiency loss
-- [Discord](./Discord/) - Various programs involving sending Discord messages from within Minecraft
+- [Farms](./Farms/) - Scripts for automated farming
+    - [SugarcaneFarm](./Farms/SugarcaneFarm/) - Automated sugarcane farm of any size utilizing a mining turtle
 - [HttpExample](https://github.com/Sv443/ComputerCraftHttpExample) - Example code that shows how HTTP requests work in ComputerCraft
 - [JokeAPI](https://github.com/Sv443/JokeAPI_ComputerCraft) - Displays a joke on a monitor on interval
 - [Jukebox](./Jukebox/) - Converts real audio files into ComputerCraft programs, to be played in-game on a speaker
