@@ -26,7 +26,7 @@ It doesn't change control rod settings and works by only turning the reactor on 
 2. Run these commands:
 ```
 label set reactor_control
-pastebin get Sh6wsQW7 startup.lua
+pastebin get 6dGmpQaA startup.lua
 edit startup.lua
 ```
 3. Change the settings at the top of the file to match your setup
