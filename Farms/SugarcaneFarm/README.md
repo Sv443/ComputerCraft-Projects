@@ -26,7 +26,7 @@ You can even use this same script for a cactus farm as they behave identically.
 3. Run these commands:
 ```
 label set sugarcane_farm
-pastebin get TODO startup.lua
+pastebin get xHQnQRay startup.lua
 edit startup.lua
 ```
 3. Change the settings at the top of the file to match your farm size, fuel item and growing speed (if you have a mod that changes the growing speed of sugarcane, like PneumaticCraft, which I used in the screenshot above)
