@@ -169,7 +169,16 @@ end
 
 function run()
     print("\n| SugarcaneFarm by Sv443\n| https://github.com/Sv443/ComputerCraft-Projects\n")
-    os.sleep(2)
+
+    local waitInput = nil
+    term.write("Press [Enter] to start the farm")
+    while true do
+        waitInput = read()
+        if waitInput ~= nil then
+            break
+        end
+    end
+
     if TARGET_FUEL_LEVEL < 250 then
         print("WARNING: TARGET_FUEL_LEVEL is set very low, this may cause the turtle to get stuck.")
         print("Please set the value to at least 250, but ideally 500 or more.")

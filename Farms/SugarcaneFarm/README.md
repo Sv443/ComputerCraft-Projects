@@ -13,6 +13,9 @@ You can even use this same script for a cactus farm as they behave identically.
 
 - The farm can be of any size, as long as it's a rectangle
 - The sugarcane can be in any pattern
+- After relogging in singleplayer or restarting the server the turtle will restart.  
+  If it is in the middle of a harvesting cycle it will need to be manually broken and replaced on the refueling station.  
+  This is also why you need to press enter to start the program every time.
 - The turtle will break every block in the farm above and including a height of 2 blocks, so make sure there are no blocks there you don't want broken
 - Make sure the entire row of the y axis that the barrels/chests are on is empty, as the turtle will move there to deposit the sugarcane
 - Always keep the refueling station stocked or the turtle will eventually get stuck in the middle of a harvesting cycle
@@ -27,10 +30,11 @@ You can even use this same script for a cactus farm as they behave identically.
 3. Run these commands:
 ```
 label set sugarcane_farm
-pastebin get xHQnQRay startup.lua
+pastebin get Y5kN2rZp startup.lua
 edit startup.lua
 ```
 3. Change the settings at the top of the file to match your farm size, fuel item and growing speed (if you have a mod that changes the growing speed of sugarcane, like PneumaticCraft, which I used in the screenshot above)
   Just make sure the sugarcane doesn't grow faster than the turtle takes to move the full length in the X axis or it will get stuck!
 4. Press <kbd>Ctrl</kbd>, select `[Save]` and press <kbd>Enter</kbd>, then press <kbd>Ctrl</kbd> again, select `[Exit]` and press <kbd>Enter</kbd>  
-5. Now run the command `reboot` to automatically start the program
+5. Now run the command `reboot` to start the program
+6. Press <kbd>Enter</kbd> to let the turtle move (this is confirmation so it doesn't accidentally break something unintended)
