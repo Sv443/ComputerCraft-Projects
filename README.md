@@ -10,6 +10,7 @@ This contains all of my ComputerCraft (Lua) projects
 - [Discord](./Discord/) - Various programs involving sending Discord messages from within Minecraft
 - [ExtremeReactors](./ExtremeReactors/) - Scripts for the [ExtremeReactors mod](https://modrinth.com/mod/extreme-reactors)
     - [ReactorControl](./ExtremeReactors/ReactorControl/) - Simple program to control a reactor with little efficiency loss
+    - [ReactorAlarm](./ExtremeReactors/ReactorAlarm/) - Program that sounds an alarm when the fuel level of a reactor is low
 - [Farms](./Farms/) - Scripts for automated farming
     - [SugarcaneFarm](./Farms/SugarcaneFarm/) - Automated sugarcane farm of any size utilizing a mining turtle
 - [HttpExample](https://github.com/Sv443/ComputerCraftHttpExample) - Example code that shows how HTTP requests work in ComputerCraft
