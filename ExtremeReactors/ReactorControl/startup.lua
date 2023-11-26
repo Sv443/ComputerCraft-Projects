@@ -32,16 +32,15 @@ function check()
 
     if not state and setEn then
         state = true
-        os.sleep(1)
     elseif state and resetEn then
         state = false
-        os.sleep(1)
     end
 
     if state ~= prevState then
         print(">> "..(state and "Enabling" or "Disabling").." reactor")
         redstone.setOutput(OUTPUT_SIDE, state)
         prevState = state
+        os.sleep(1)
     end
 
     os.sleep(CHECK_INTERVAL)
