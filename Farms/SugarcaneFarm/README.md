@@ -16,6 +16,7 @@ You can even use this same script for a cactus farm as they behave identically.
 - The turtle will break every block in the farm above and including a height of 2 blocks, so make sure there are no blocks there you don't want broken
 - Make sure the entire row of the y axis that the barrels/chests are on is empty, as the turtle will move there to deposit the sugarcane
 - Always keep the refueling station stocked or the turtle will eventually get stuck in the middle of a harvesting cycle
+- You may open the turtle every now and again to see its stats, which it will print every time it refuels after finishing a harvesting cycle
 
 <br>
 
