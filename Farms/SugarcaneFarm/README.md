@@ -36,7 +36,7 @@ Additionally, the program has a feature to return to the refueling station using
   If you don't want to use this feature, make sure to disable it (see step 5)
 2. Craft a mining turtle (pickaxe) and two chests or barrels and place them like shown in the image above  
   The positioning of the chests/barrels is important! The turtle will always assume the farm is in front of it and to the right, from its initial position.  
-  When using the auto-home feature, the turtle will need an ender modem
+  When using the auto-home feature, the turtle will also need an ender modem equipped in its other slot.
 3. Place the mining turtle above the refueling station in the corner, facing along the left edge of the farm (X axis)
 4. Run these commands:
 ```
