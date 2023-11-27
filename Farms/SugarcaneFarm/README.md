@@ -26,8 +26,9 @@ Additionally, the program has a feature to return to the refueling station using
 
 ### Less important info:
 - When the auto-home feature is triggered, the turtle will move up (2 blocks by default) so it doesn't get stuck, then move in an L-shape to the refueling station, starting with the x-axis.  
-  If any block is in the way, you will need to manually re-place the turtle on the refueling station.
-- You may open the turtle every now and again to see its stats, which it will print every time it refuels after finishing a harvesting cycle
+  If any block is in the way, it will give up and shut down and you will need to manually re-place the turtle on the refueling station.
+- You may open the turtle every now and again to see its stats, which it will print every time it refuels after finishing a harvesting cycle.  
+  Do note that these stats get cleared after every reboot (including re-join on SP or server restart on MP)
 
 <br>
 
