@@ -40,7 +40,7 @@ Additionally, the program has a feature to return to the refueling station using
 4. Run these commands:
 ```
 label set sugarcane_farm
-pastebin get Y5kN2rZp startup.lua
+pastebin get 1G6qAMMt startup.lua
 edit startup.lua
 ```
 5. Change the settings at the top of the file to match your farm size, fuel item and growing speed (if you have a mod that changes the growing speed of sugarcane, like PneumaticCraft, which I used in the screenshot above)

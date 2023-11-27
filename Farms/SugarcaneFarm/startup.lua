@@ -498,7 +498,7 @@ function printStatus()
 end
 
 function run()
-    print("\n| SugarcaneFarm by Sv443\n| https://github.com/Sv443/ComputerCraft-Projects\n")
+    print("\n| SugarcaneFarm by Sv443\n")
 
     if TARGET_FUEL_LEVEL < 250 then
         print("\nWARNING: TARGET_FUEL_LEVEL is set very low, this may cause the turtle to get stuck.")
