@@ -13,6 +13,8 @@ This contains all of my ComputerCraft (Lua) projects
     - [ReactorAlarm](./ExtremeReactors/ReactorAlarm/) - Program that sounds an alarm when the fuel level of a reactor is low
 - [Farms](./Farms/) - Scripts for automated farming
     - [SugarcaneFarm](./Farms/SugarcaneFarm/) - Automated sugarcane farm of any size utilizing a mining turtle
+- [GPS](./GPS/) - Scripts for the in-game GPS system
+    - [HomePosition](./GPS/HomePosition) - Example scripts for persistently saving, loading and moving to the home position of a turtle
 - [HttpExample](https://github.com/Sv443/ComputerCraftHttpExample) - Example code that shows how HTTP requests work in ComputerCraft
 - [JokeAPI](https://github.com/Sv443/JokeAPI_ComputerCraft) - Displays a joke on a monitor on interval
 - [Jukebox](./Jukebox/) - Converts real audio files into ComputerCraft programs, to be played in-game on a speaker
