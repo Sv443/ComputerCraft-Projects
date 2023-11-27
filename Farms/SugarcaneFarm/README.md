@@ -16,7 +16,7 @@ Additionally, the program has a feature to return to the refueling station using
 - The sugarcane (or cacti) can be in any pattern
 - After relogging in singleplayer or restarting the server the turtle will restart, making it lose all sense of position.  
   For this reason the auto-home feature exists. It will make the turtle move back to the refueling station and restart the harvesting cycle if it is in an unexpected position.
-- To reset the home position, hold <kbd>Ctrl</kbd> + <kbd>T</kbd> and use the command `rm home_coords.txt`
+- To reset the home position, hold <kbd>Ctrl</kbd> + <kbd>T</kbd> and use the command `rm home_coords.txt`  
   Then just place the turtle in its new home position and open it to confirm.
 - The turtle will break every block in the farm above and including a height of 2 blocks, so make sure there are no blocks there you don't want broken
 - Always keep the refueling station stocked or the turtle will eventually get stuck in the middle of a harvesting cycle
