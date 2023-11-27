@@ -1,5 +1,5 @@
 # ComputerCraft-Projects
-This contains all of my ComputerCraft (Lua) projects
+This contains all of my ComputerCraft (Lua) projects, like farms, gadgets and programs for improving gameplay involving mods like Botania and ExtremeReactors
 
 - [Billboard](./Billboard/) - Displays some text and cycling colors on a monitor
 - [Botania](./Botania/) - Various controllers and analytical tools for the Botania mod
