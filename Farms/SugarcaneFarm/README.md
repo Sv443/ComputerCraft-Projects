@@ -14,9 +14,10 @@ Additionally, the program has a feature to return to the refueling station using
 
 - The farm can be of any size, as long as it's a rectangle
 - The sugarcane (or cacti) can be in any pattern
-- After relogging in singleplayer or restarting the server the turtle will restart.  
-  If it is in the middle of a harvesting cycle it will need to be manually broken and replaced on the refueling station.  
-  This is also why you need to press enter to start the program every time.
+- After relogging in singleplayer or restarting the server the turtle will restart, making it lose all sense of position.  
+  For this reason the auto-home feature exists. It will make the turtle move back to the refueling station and restart the harvesting cycle if it is in an unexpected position.
+- To reset the home position, hold <kbd>Ctrl</kbd> + <kbd>T</kbd> and use the command `rm home_coords.txt`
+  Then just place the turtle in its new home position and open it to confirm.
 - The turtle will break every block in the farm above and including a height of 2 blocks, so make sure there are no blocks there you don't want broken
 - Always keep the refueling station stocked or the turtle will eventually get stuck in the middle of a harvesting cycle
 - Make sure the entire row of the y axis that the barrels/chests are on is empty, as the turtle will move there to deposit the sugarcane
@@ -46,4 +47,5 @@ edit startup.lua
 5. Change the settings at the top of the file to match your farm size, fuel item and growing speed (if you have a mod that changes the growing speed of sugarcane, like PneumaticCraft, which I used in the screenshot above)
   Just make sure the sugarcane doesn't grow faster than the turtle takes to move the full length in the X axis or it will get stuck!
 6. Press <kbd>Ctrl</kbd>, select `[Save]` and press <kbd>Enter</kbd>, then press <kbd>Ctrl</kbd> again, select `[Exit]` and press <kbd>Enter</kbd>  
-7. Now run the command `reboot` to start the program
+7. Run the command `reboot` to start the program
+8. Confirm setting the home position with <kbd>Enter</kbd> once it is placed on the refueling station in the correct orientation
