@@ -13,6 +13,7 @@ This contains all of my ComputerCraft (Lua) projects, like farms, gadgets and pr
     - [ReactorAlarm](./ExtremeReactors/ReactorAlarm/) - Program that sounds an alarm when the fuel level of a reactor is low
 - [Farms](./Farms/) - Scripts for automated farming
     - [SugarcaneFarm](./Farms/SugarcaneFarm/) - Automated sugarcane (and even cactus) farm of any size utilizing a mining turtle (also resilient against server restarts and world re-joins)
+    - [ConcreteConverter](./Farms/ConcreteConverter/) - Automated concrete powder converter using a turtle (without fuel consumption)
 - [GPS](./GPS/) - Scripts for the in-game GPS system
     - [HomePosition](./GPS/HomePosition) - Example scripts for persistently saving, loading and moving to the home position of a turtle
 - [HttpExample](https://github.com/Sv443/ComputerCraftHttpExample) - Example code that shows how HTTP requests work in ComputerCraft
@@ -21,5 +22,5 @@ This contains all of my ComputerCraft (Lua) projects, like farms, gadgets and pr
 - [NTP](./NTP/) - Network time system and timestamp format implemented in-game
     - [NTP-Server](./NTP/NTP-Server) - Serves an ingame timestamp via wireless modem
     - [NTP-Clock](./NTP/NTP-Clock) - A clock that displays the ingame time, day and day of the week
-- [WIP: RedstoneGates](./RedstoneGates/) - Various configurable redstone gates that are computer based
+- [RedstoneGates](./RedstoneGates/) - Various configurable redstone gates and circuits that are computer based
 - [TODO: Turtle](./Turtle/) - Various scripts for the turtle
