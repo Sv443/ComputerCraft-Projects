@@ -14,6 +14,8 @@ This setup is only an example, you can place the input and output inventories an
 <br>
 
 ### Notes:
+- In order for the turtle not to break on SP world rejoins or MP server restarts, the turtle keeps track of its orientation.  
+  If you move the turtle to a new spot or rotate it while in the same spot, hold <kbd>Ctrl</kbd> + <kbd>T</kbd> then run the command `rm orientation.txt` and then break the turtle, place it on its new spot and open it once to start the program.
 - Since the turtle only turns around and doesn't move, no fuel is needed.
 - The turtle will only take one stack from the input at a time, but it will eventually take every single item you put in the input.
 - Should the input inventory be empty, the turtle will wait and check every half second until you put something in.
@@ -29,7 +31,7 @@ This setup is only an example, you can place the input and output inventories an
 4. Run these commands:
 ```
 label set concrete_converter
-pastebin get TODO startup.lua
+pastebin get 8sbKSe4e startup.lua
 edit startup.lua
 ```
 5. Change the settings at the top of the file to match your setup, including inventory sides and how long it takes for the block to be converted

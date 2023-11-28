@@ -14,15 +14,21 @@ BREAK_DELAY = nil
 
 
 
+ORIENTATION_PATH = "/orientation.txt"
+curOrient = 0
 
 function run()
     print("\n| ConcreteConverter by Sv443\n| https://github.com/Sv443/ComputerCraft-Projects\n")
+
+    correctOrientation()
+
     local itemDet = turtle.getItemDetail(1)
     if itemDet ~= nil and itemDet.count > 0 then
         print("! Started with items in inventory!")
         print("! Automatically ejecting them...\n")
         depositItems()
     end
+
     while true do
         local itemDet = turtle.getItemDetail(1)
         if itemDet == nil then
@@ -47,6 +53,45 @@ function run()
     end
 end
 
+-- Turns right or left
+function turn(direction)
+    local file = fs.open(ORIENTATION_PATH, "w")
+    if direction == "right" then
+        curOrient = curOrient + 1
+        file.write(tostring(curOrient).."\n")
+        file.close()
+        turtle.turnRight()
+    elseif direction == "left" then
+        curOrient = curOrient - 1
+        file.write(tostring(curOrient).."\n")
+        file.close()
+        turtle.turnLeft()
+    end
+end
+
+-- Corrects the orientation on reboot
+function correctOrientation()
+    if not fs.exists(ORIENTATION_PATH) then
+        local file = fs.open(ORIENTATION_PATH, "w")
+        file.write("0\n")
+        file.close()
+    end
+    local file = fs.open(ORIENTATION_PATH, "r")
+    local correctOrient = tonumber(file.readLine())
+    if correctOrient ~= 0 then
+        if correctOrient > 0 then
+            for t = 1, correctOrient do
+                turtle.turnLeft()
+            end
+        else
+            for t = 1, math.abs(correctOrient) do
+                turtle.turnRight()
+            end
+        end
+    end
+    file.close()
+end
+
 -- Grabs new items from the first occupied slot in the input inventory
 -- Returns true if items could be grabbed, false otherwise
 function grabItems()
@@ -54,9 +99,9 @@ function grabItems()
     turtle.select(1)
     for t = 1, math.abs(INPUT_TURNS) do
         if INPUT_TURNS > 0 then
-            turtle.turnRight()
+            turn("right")
         else
-            turtle.turnLeft()
+            turn("left")
         end
     end
     while not turtle.suck() do
@@ -68,9 +113,9 @@ function grabItems()
     end
     for t = 1, math.abs(INPUT_TURNS) do
         if INPUT_TURNS > 0 then
-            turtle.turnLeft()
+            turn("left")
         else
-            turtle.turnRight()
+            turn("right")
         end
     end
     return result
@@ -81,9 +126,9 @@ function depositItems()
     turtle.select(1)
     for t = 1, math.abs(OUTPUT_TURNS) do
         if OUTPUT_TURNS > 0 then
-            turtle.turnRight()
+            turn("right")
         else
-            turtle.turnLeft()
+            turn("left")
         end
     end
     for i = 1, 16 do
@@ -96,9 +141,9 @@ function depositItems()
     end
     for t = 1, math.abs(OUTPUT_TURNS) do
         if OUTPUT_TURNS > 0 then
-            turtle.turnLeft()
+            turn("left")
         else
-            turtle.turnRight()
+            turn("right")
         end
     end
 end
