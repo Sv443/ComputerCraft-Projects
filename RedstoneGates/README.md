@@ -38,6 +38,7 @@ To install one of these gates, run one of the commands from below:
 | Gate | Install command | Special features |
 | --- | --- | --- |
 | S/R Latch | `pastebin get 1CPbvG3s startup.lua` | Configurable post-change delay |
+| Sequencer | `pastebin get fzZgHDkp startup.lua` | &bull; Fully configurable redstone sequence on all sides<br>&bull; Optional single-shot mode |
 | Pulse Extender | `-` | - |
 
 <br>
