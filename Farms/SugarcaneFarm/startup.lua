@@ -5,14 +5,16 @@ DISTANCE_X = 13
 -- This is the length of the farm, starting from the right side of the turtle, including the refuel station
 DISTANCE_Y = 9
 
--- turtle refuels until it reaches this level
--- 1 item smelted equals 10 fuel points; this means coal = 80 fuel points
-TARGET_FUEL_LEVEL = 500
+-- Turtle will refuel at the refueling station until it reaches this level
+-- Don't set this too low or it might get stuck mid-cycle
+-- To find out how much it uses per cycle, see the stats that are printed after each cycle
+-- 1 item smelted equals 10 fuel points, so one coal is 80, a blaze rod is 120, etc.
+TARGET_FUEL_LEVEL = 600
 
 -- Delay between harvest cycles in seconds, has to be a multiple of 0.05 (1 game tick)
 DELAY_BETWEEN_HARVESTS = 60
 
--- Path back to the home position using GPS after a reboot?
+-- Whether to path back to the home position using GPS after a reboot
 -- This requires an ender modem and a GPS tower to be present and in loaded chunks
 -- This feature is useful for singleplayer or if a multiplayer server restarts often
 -- as the turtle will just stop in the middle of a harvest cycle and not know where it is anymore
@@ -21,14 +23,25 @@ USE_GPS_HOME = true
 -- How many blocks to move upwards while returning to the home position
 -- so the turtle doesn't run into anything - 0 to disable
 GPS_SAFETY_HEIGHT = 2
+-- Timeout for GPS operations in seconds - increase if the GPS tower is far away
+GPS_TIMEOUT = 5
+
+-- File path where statistics are stored
+STATS_PATH = "/farm_stats.txt"
+-- File path where the home position is stored
+HOME_COORDS_PATH = "/home_coords.txt"
+
+-- TODO:
+--  - save and load stats to and from file
+--  - display fuel use per cycle
 
 
 
 -- DO NOT EDIT OR TURTLE GETS ANGY >:(
 local xPos = 1
 local yPos = 1
-local cyclesCompleted = 0
-local totalItems = 0
+local fuelBeforeCycle = nil
+local fuelPerCycle = 0
 
 -- #SECTION refuel
 
@@ -78,11 +91,13 @@ function moveRefuel()
     turtle.forward()
     yPos = yPos - 1
     turtle.turnRight()
+    fuelPerCycle = fuelBeforeCycle - turtle.getFuelLevel()
 end
 
 -- #SECTION drop items
 
 -- drops off all items into inventory below
+-- returns the amount of dropped off items
 function dropItems()
     local curSlot = 2
     local itemsAmt = 0;
@@ -96,12 +111,12 @@ function dropItems()
     end
     turtle.select(1)
     print("* Dropped off "..tostring(itemsAmt).." item"..(itemsAmt == 1 and "" or "s"))
-    totalItems = totalItems + itemsAmt
+    return itemsAmt
 end
 
 -- returns to the dropoff inventory after the harvest cycle is complete
 function returnToDropoff()
-    print("* Done harvesting, returning to dropoff")
+    print("* Cycle finished, returning to dropoff")
     turtle.turnRight()
     turtle.turnRight()
     for x=1, DISTANCE_X - 1, 1 do
@@ -120,6 +135,8 @@ end
 
 -- runs through the entire harvesting cycle, starting from the refuel station and ending up on the dropoff station
 function harvest()
+    fuelBeforeCycle = turtle.getFuelLevel()
+
     turtle.up()
     turtle.forward()
     xPos = xPos + 1
@@ -170,8 +187,6 @@ end
 
 -- #SECTION gps
 
-HOME_COORDS_PATH = "/home_coords.txt"
-GPS_TIMEOUT = 5
 ORIENTATIONS = { "N", "E", "S", "W" }
 
 -- paths back to the home position using GPS
@@ -185,7 +200,7 @@ function gpsGoHome(orient)
     local curOrient = orient and orient or gpsDetermineOrientation()
 
     if curX == nil then
-        print("\n! Error: GPS failed to locate!")
+        print("\n! Error: No GPS signal!")
         return false
     end
 
@@ -193,10 +208,7 @@ function gpsGoHome(orient)
         return true
     end
 
-    print("\n! Starting in unexpected position.\n! Trying to return home...")
-
-    -- print("Current: "..tostring(curX)..", "..tostring(curY)..", "..tostring(curZ)..", orient "..tostring(ORIENTATIONS[curOrient]))
-    -- print("Home: "..tostring(homeX)..", "..tostring(homeY)..", "..tostring(homeZ)..", orient "..tostring(ORIENTATIONS[homeOrient]))
+    print("\n! Starting in unexpected position.\n! Returning to refueling station...")
 
     local xDiff = homeX - curX
     local yDiff = homeY - curY
@@ -211,14 +223,10 @@ function gpsGoHome(orient)
     local yDir = yDiff < 0 and -1 or yDiff == 0 and 0 or 1 -- 1 for up, -1 for down
     local zDir = zDiff < 0 and -1 or zDiff == 0 and 0 or 1 -- 1 for south, -1 for north
 
-    -- print("xDir: "..tostring(xDir).." yDir: "..tostring(yDir).." zDir: "..tostring(zDir))
-
     -- Determine the amounts to move
     local xAmount = math.abs(xDiff)
     local yAmount = math.abs(yDiff)
     local zAmount = math.abs(zDiff)
-
-    -- print("xAm: "..tostring(xAmount).." yAm: "..tostring(yAmount).." zAm: "..tostring(zAmount))
 
     -- Face towards the x axis
 
@@ -394,7 +402,7 @@ end
 function gpsPromptSetHomePos()
     local x, y, z = gps.locate(GPS_TIMEOUT)
     if x ~= nil then
-        print("\nCurrent coords: "..tostring(x)..", "..tostring(y)..", "..tostring(z))
+        print("\nCurrent position: "..tostring(x)..", "..tostring(y)..", "..tostring(z))
         term.write("Set as home position? (Y/n): ")
         local setHomePos = nil
         while true do
@@ -404,7 +412,7 @@ function gpsPromptSetHomePos()
             end
         end
         if setHomePos == "y" or setHomePos == "Y" or setHomePos == "" then
-            print("\nDetermining orientation...")
+            print("\nDetermining facing...")
             local orientation = gpsDetermineOrientation()
             if orientation == nil then
                 print("\nTurtle is stuck or out of fuel!\nPlease make sure at least one adjacent block is air and enough fuel is present.\n")
@@ -433,7 +441,7 @@ end
 -- by trying to move in any available direction and then back to
 -- the original position without breaking any adjacent blocks
 function gpsDetermineOrientation()
-    print("* Determining turtle orientation...")
+    print("* Determining turtle facing...")
     local x1, y1, z1 = gps.locate(GPS_TIMEOUT)
 
     if x1 == nil then
@@ -486,25 +494,62 @@ function gpsDetermineOrientation()
     return orientation
 end
 
--- #SECTION run
+-- #SECTION stats
 
-function printStatus()
+-- Returns the stats as a table
+-- Contents: cyclesCompleted, totalItems
+-- Returns all nil if the stats file doesn't exist
+function loadStats()
+    if not fs.exists(STATS_PATH) then
+        return nil, nil
+    end
+    local file = fs.open(STATS_PATH, "r")
+    cyclesCompleted = tonumber(file.readLine())
+    totalItems = tonumber(file.readLine())
+    file.close()
+    return cyclesCompleted, totalItems
+end
+
+-- Saves the passed stats to the turtle's stats file
+-- Values are added to the already recorded stats
+function addStats(cycles, items)
+    local cyclesCompleted, totalItems = loadStats()
+
+    if cyclesCompleted == nil then
+        cyclesCompleted = 0
+        totalItems = 0
+    end
+
+    cyclesCompleted = cyclesCompleted + cycles
+    totalItems = totalItems + items
+
+    if fs.exists(STATS_PATH) then
+        fs.delete(STATS_PATH)
+    end
+
+    local file = fs.open(STATS_PATH, "w")
+    file.write(tostring(cyclesCompleted).."\n"..tostring(totalItems).."\n")
+    file.close()
+
+    return true
+end
+
+-- Prints stats to the console
+function printStats()
+    local cyclesCompleted, totalItems = loadStats()
     print("")
-    print("-> Turtle status:")
+    print("-> Turtle stats:")
     print("   Current fuel level:    "..tostring(turtle.getFuelLevel()).." / "..tostring(TARGET_FUEL_LEVEL))
-    print("   Harvest cycles done:   "..tostring(cyclesCompleted))
+    print("   Fuel usage per cycle:  "..tostring(fuelPerCycle))
+    print("   Total harvests done:   "..tostring(cyclesCompleted))
     print("   Total items offloaded: "..tostring(totalItems))
     print("")
 end
 
+-- #SECTION run
+
 function run()
     print("\n| SugarcaneFarm by Sv443\n")
-
-    if TARGET_FUEL_LEVEL < 250 then
-        print("\nWARNING: TARGET_FUEL_LEVEL is set very low, this may cause the turtle to get stuck.")
-        print("Please set the value to at least 250, but ideally 500 or more.\n")
-        os.sleep(5)
-    end
 
     if USE_GPS_HOME then
         local homeX, homeY, homeZ, homeOrient = gpsGetHomePos()
@@ -528,17 +573,22 @@ function run()
     end
 
     while true do
-        print("")
+        local cyclesCompleted = loadStats()
+
         xPos = 1
         yPos = 1
+
+        print("")
         refuel()
-        print("* Starting harvest cycle #"..tostring(cyclesCompleted + 1))
+        print("* Starting cycle #"..tostring((cyclesCompleted or 0) + 1))
         harvest()
-        dropItems()
+        local itemsDropped = dropItems()
         moveRefuel()
-        cyclesCompleted = cyclesCompleted + 1
-        printStatus()
-        print("* Waiting "..tostring(DELAY_BETWEEN_HARVESTS).."s until next harvest")
+
+        addStats(1, itemsDropped)
+        printStats()
+
+        print("* Waiting "..tostring(DELAY_BETWEEN_HARVESTS).."s until next cycle")
         os.sleep(DELAY_BETWEEN_HARVESTS)
     end
 end
