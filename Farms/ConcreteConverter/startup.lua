@@ -36,7 +36,7 @@ function run()
         end
         itemDet = turtle.getItemDetail(1)
         turtle.select(1)
-        if itemDet ~= nil and itemDet.count > 1 then
+        if itemDet ~= nil and itemDet.count > 0 then
             print("> Converting "..itemDet.count.." block"..(itemDet.count > 1 and "s" or ""))
         end
         for i = 1, itemDet.count do
