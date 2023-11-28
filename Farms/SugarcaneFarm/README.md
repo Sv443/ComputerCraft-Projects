@@ -22,13 +22,13 @@ Additionally, the program has a feature to return to the refueling station using
 - Always keep the refueling station stocked or the turtle will eventually get stuck in the middle of a harvesting cycle
 - Make sure the entire row of the y axis that the barrels/chests are on is empty, as the turtle will move there to deposit the sugarcane
 - Also make sure there is enough air above the farm if you are using the auto-home feature.
-  The exact height can be changed in the settings, but 1 block air above the sugarcane is the minimum and default setting.
+  The exact height can be changed in the settings, but 2 blocks of air above the sugarcane is the minimum and default setting.
 
 ### Less important info:
 - When the auto-home feature is triggered, the turtle will move up (2 blocks by default) so it doesn't get stuck, then move in an L-shape to the refueling station, starting with the x-axis.  
   If any block is in the way, it will give up and shut down and you will need to manually re-place the turtle on the refueling station.
-- You may open the turtle every now and again to see its stats, which it will print every time it refuels after finishing a harvesting cycle.  
-  Do note that these stats get cleared after every reboot (including re-join on SP or server restart on MP)
+- You may open the turtle every now and again to see its stats, which it will print every time it refuels after finishing a harvesting cycle.
+- To reset the stats, hold <kbd>Ctrl</kbd> + <kbd>T</kbd> then run the command `rm farm_stats.txt` and then run `reboot` to start the harvesting program again.
 
 <br>
 
