@@ -9,10 +9,10 @@ DISTANCE_Y = 9
 -- Don't set this too low or it might get stuck mid-cycle
 -- To find out how much it uses per cycle, see the stats that are printed after each cycle
 -- 1 item smelted equals 10 fuel points, so one coal is 80, a blaze rod is 120, etc.
-TARGET_FUEL_LEVEL = 600
+TARGET_FUEL_LEVEL = 800
 
 -- Delay between harvest cycles in seconds, has to be a multiple of 0.05 (1 game tick)
-DELAY_BETWEEN_HARVESTS = 90
+DELAY_BETWEEN_HARVESTS = 120
 
 -- Whether to path back to the home position using GPS after a reboot
 -- This requires an ender modem and a GPS tower to be present and in loaded chunks
@@ -113,13 +113,19 @@ end
 -- returns to the dropoff inventory after the harvest cycle is complete
 function returnToDropoff()
     print("* Cycle finished, returning to dropoff")
-    turtle.turnRight()
-    turtle.turnRight()
-    for x=1, DISTANCE_X - 1, 1 do
+    if DISTANCE_Y % 2 ~= 0 then
+        turtle.turnRight()
+        turtle.turnRight()
+        for x=1, DISTANCE_X - 1, 1 do
+            turtle.forward()
+            xPos = xPos - 1
+        end
+        turtle.turnRight()
+    else
         turtle.forward()
         xPos = xPos - 1
+        turtle.turnRight()
     end
-    turtle.turnRight()
     for y=1, DISTANCE_Y - 2, 1 do
         turtle.forward()
         yPos = yPos - 1
