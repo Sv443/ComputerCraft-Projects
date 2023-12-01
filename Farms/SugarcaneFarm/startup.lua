@@ -12,7 +12,7 @@ DISTANCE_Y = 9
 TARGET_FUEL_LEVEL = 600
 
 -- Delay between harvest cycles in seconds, has to be a multiple of 0.05 (1 game tick)
-DELAY_BETWEEN_HARVESTS = 60
+DELAY_BETWEEN_HARVESTS = 90
 
 -- Whether to path back to the home position using GPS after a reboot
 -- This requires an ender modem and a GPS tower to be present and in loaded chunks
@@ -30,10 +30,6 @@ GPS_TIMEOUT = 5
 STATS_PATH = "/farm_stats.txt"
 -- File path where the home position is stored
 HOME_COORDS_PATH = "/home_coords.txt"
-
--- TODO:
---  - save and load stats to and from file
---  - display fuel use per cycle
 
 
 
@@ -374,6 +370,7 @@ function goHomeTryRefuel()
     if itemDet == nil then
         return
     end
+    turtle.select(1)
     while turtle.getFuelLevel() < TARGET_FUEL_LEVEL do
         turtle.refuel(1)
         itemDet = turtle.getItemDetail(1)
