@@ -12,7 +12,7 @@ DISTANCE_Y = 9
 TARGET_FUEL_LEVEL = 800
 
 -- Delay between harvest cycles in seconds, has to be a multiple of 0.05 (1 game tick)
-DELAY_BETWEEN_HARVESTS = 120
+DELAY_BETWEEN_HARVESTS = 60 * 4
 
 -- Whether to path back to the home position using GPS after a reboot
 -- This requires an ender modem and a GPS tower to be present and in loaded chunks
@@ -50,8 +50,13 @@ function grabFuel()
         fuelNeeded = 64 - itemDet.count
     end
     if fuelNeeded > 0 then
-        turtle.suckDown(fuelNeeded)
-        print("* Restocked "..tostring(fuelNeeded).." fuel item"..(fuelNeeded == 1 and "" or "s"))
+        if turtle.suckDown(fuelNeeded) then
+            itemDet = turtle.getItemDetail(1)
+            print("* Restocked "..tostring(itemDet.count).." fuel item"..(itemDet.count == 1 and "" or "s"))
+            return true
+        else
+            return false
+        end
     end
 end
 
@@ -62,7 +67,9 @@ function refuel()
     while itemDet == nil do
         print("! Waiting for fuel...")
         os.sleep(1)
-        grabFuel()
+        while not grabFuel() and turtle.getFuelLevel() < TARGET_FUEL_LEVEL do
+            os.sleep(0.5)
+        end
         itemDet = turtle.getItemDetail(1)
     end
     while turtle.getFuelLevel() < TARGET_FUEL_LEVEL do
@@ -202,7 +209,7 @@ function gpsGoHome(orient)
     local curOrient = orient and orient or gpsDetermineOrientation()
 
     if curX == nil then
-        print("\n! Error: No GPS signal!")
+        print("\n! Error: No GPS signal!\n! Either set USE_GPS_HOME to false\n! or provide a GPS tower and ender modem\n")
         return false
     end
 
@@ -415,6 +422,10 @@ function gpsPromptSetHomePos()
             end
         end
         if setHomePos == "y" or setHomePos == "Y" or setHomePos == "" then
+            if turtle.getFuelLevel() < TARGET_FUEL_LEVEL then
+                refuel()
+            end
+
             print("\nDetermining facing...")
             local orientation = gpsDetermineOrientation()
             if orientation == nil then
@@ -558,6 +569,7 @@ function run()
         local homeX, homeY, homeZ, homeOrient = gpsGetHomePos()
         if homeX == nil then
             if not gpsPromptSetHomePos() then
+                print("\n! GPS home not set, exiting.\n")
                 return
             end
         else

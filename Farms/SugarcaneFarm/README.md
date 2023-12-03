@@ -1,5 +1,5 @@
 ## Sugarcane Farm
-This program controls a mining turtle to automatically harvest sugarcane and deposit it into a chest or barrel.  
+This program controls a turtle to automatically harvest sugarcane and deposit it into a chest or barrel.  
 It also refuels itself automatically.  
 You can even use this same script for a cactus farm as they behave identically.  
 Additionally, the program has a feature to return to the refueling station using GPS if it gets stuck somewhere (which happens if the world is rejoined on SP or the server restarts on MP).  
@@ -35,10 +35,10 @@ Additionally, the program has a feature to return to the refueling station using
 ### Installation:
 1. If you intend on using the auto-home feature you will need to set up some GPS servers in always loaded chunks first, see [this guide](https://tweaked.cc/guide/gps_setup.html)  
   If you don't want to use this feature, make sure to disable it (see step 5)
-2. Craft a mining turtle (pickaxe) and two chests or barrels and place them like shown in the image above  
+2. Craft a turtle with a mining tool (like pickaxe or hoe) and two chests or barrels and place them like shown in the image above  
   The positioning of the chests/barrels is important! The turtle will always assume the farm is in front of it and to the right, from its initial position.  
   When using the auto-home feature, the turtle will also need an ender modem equipped in its other slot.
-3. Place the mining turtle above the refueling station in the corner, facing along the left edge of the farm (X axis)
+3. Place the turtle above the refueling station in the corner, facing along the left edge of the farm (X axis)
 4. Run these commands:
 ```
 label set sugarcane_farm
