@@ -1,6 +1,8 @@
 # ComputerCraft-Projects
-This contains all of my ComputerCraft (Lua) projects, like farms, gadgets and programs for improving gameplay involving mods like Botania and ExtremeReactors
+This contains all of my ComputerCraft (Lua) projects, like farms, gadgets and programs for improving gameplay involving mods like Applied Energistics, Botania and ExtremeReactors
 
+- [AppliedEnergistics](./AppliedEnergistics/) - Programs involving the [Applied Energistics 2](https://modrinth.com/mod/ae2) mod
+    - [CertusCrystalFarm](./AppliedEnergistics/CertusCrystalFarm/) - Turtle-based certus crystal and certus dust farm from budding certus blocks (without fuel consumption)
 - [Billboard](./Billboard/) - Displays some text and cycling colors on a monitor
 - [Botania](./Botania/) - Various controllers and analytical tools for the Botania mod
     - [BotaniaPoolMeter](https://github.com/Sv443/Botania-Pool-Meter_ComputerCraft) - Displays the mana levels in botania mana pools on a monitor
