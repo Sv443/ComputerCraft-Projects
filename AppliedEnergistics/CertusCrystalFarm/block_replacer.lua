@@ -203,6 +203,14 @@ function run()
     print("\n| CertusCrystalFarm by Sv443\n| https://github.com/Sv443/ComputerCraft-Projects\n")
     loadStats()
     restoreFacing()
+    local hasBlock = turtle.inspectDown()
+    if not hasBlock then
+        local itemDet = turtle.getItemDetail(1)
+        if itemDet == nil then
+            grabBlock()
+        end
+        placeBlock()
+    end
     while true do
         turtle.select(1)
         local itemDet = turtle.getItemDetail(1)
