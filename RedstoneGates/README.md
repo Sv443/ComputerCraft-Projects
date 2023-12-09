@@ -44,5 +44,5 @@ To install one of these gates, run one of the commands from below:
 <br>
 
 ### Changing to another gate:
-If a gate has already been installed to a computer, run `delete startup.lua` to delete the old program.  
+If a gate has already been installed to a computer, run `rm startup.lua` to delete the old program.  
 Now you can re-download a new gate to it.
