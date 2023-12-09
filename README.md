@@ -13,6 +13,7 @@ This contains all of my ComputerCraft (Lua) projects, like farms, gadgets and pr
 - [ExtremeReactors](./ExtremeReactors/) - Scripts for the [ExtremeReactors mod](https://modrinth.com/mod/extreme-reactors)
     - [ReactorControl](./ExtremeReactors/ReactorControl/) - Simple program to control a reactor with little efficiency loss
     - [ReactorAlarm](./ExtremeReactors/ReactorAlarm/) - Program that sounds an alarm when the fuel level of a reactor is low
+    - [Peripheral](./ExtremeReactors/Peripheral/) - Various information useful when working with a reactor's computer port as a peripheral
 - [Farms](./Farms/) - Scripts for automated farming
     - [SugarcaneFarm](./Farms/SugarcaneFarm/) - Automated sugarcane (and even cactus) farm of any size utilizing a mining turtle (also resilient against server restarts and world re-joins)
     - [ConcreteConverter](./Farms/ConcreteConverter/) - Automated concrete powder converter using a turtle (without fuel consumption)
