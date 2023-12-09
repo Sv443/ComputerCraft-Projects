@@ -43,7 +43,7 @@ function run()
         os.sleep(STARTUP_DELAY)
     end
     while true do
-        local enabled = redstone.getInput(ENABLE_SIDE)
+        local enabled = ENABLE_SIDE == nil and true or redstone.getInput(ENABLE_SIDE)
         if prevEnabled == nil then
             prevEnabled = enabled
         end
