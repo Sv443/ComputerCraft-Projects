@@ -8,7 +8,8 @@ It also incudes a mute lever to silence the alarm while you're working on refuel
 
 <br>
 
-In this picture, the reactor redstone port is behind the computer.
+In this picture, the reactor redstone port is behind the computer.  
+It's set to activate when the internal fuel level is below a certain threshold.
 
 <br>
 
