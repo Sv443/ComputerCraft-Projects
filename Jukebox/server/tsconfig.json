@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ES2022",
+    "module": "NodeNext",
+    "rootDir": ".",
+    "outDir": "./out/",
+    "moduleResolution": "NodeNext",
+    "sourceMap": true,
+    "useDefineForClassFields": true,
+    "allowJs": false,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "noUncheckedIndexedAccess": true,
+  },
+  "exclude": [
+    "**/template.ts",
+  ],
+}
