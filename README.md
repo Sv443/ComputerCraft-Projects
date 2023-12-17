@@ -28,4 +28,3 @@ This contains all of my ComputerCraft (Lua) projects, like farms, gadgets and pr
 - [RedstoneGates](./RedstoneGates/) - Various configurable redstone gates and circuits that are computer based
     - [AND, OR, NOT, etc.](./RedstoneGates#basic-gates) - Basic gates like AND, OR, NOT, etc.
     - [S/R Latch, Sequencer, etc.](./RedstoneGates#advanced-gates) - Advanced or stateful gates like S/R Latch, Sequencer, etc.
-- [TODO: Turtle](./Turtle/) - Various scripts for the turtle
