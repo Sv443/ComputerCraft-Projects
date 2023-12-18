@@ -10,6 +10,8 @@ This contains all of my ComputerCraft (Lua) projects, like farms, gadgets and pr
     - [TODO: GourmaryllisControl](./Botania/GourmaryllisControl/) - Controls an optimal setup for 1 to infinite gourmaryllis flowers, generating mana from food
     - [TODO: ThermalilyControl](./Botania/ThermalilyControl/) - Controls a setup for 1 to infinite thermalily flowers, generating mana from lava
 - [Discord](./Discord/) - Various programs involving sending Discord messages from within Minecraft
+- [Displays](./Displays/) - Miscellaneous computer-powered displays
+    - [ContainerLevel](./Displays/ContainerLevel/) - Displays the fill level of any comparator-supporting container on a monitor
 - [ExtremeReactors](./ExtremeReactors/) - Scripts for the [ExtremeReactors mod](https://modrinth.com/mod/extreme-reactors)
     - [ReactorControl](./ExtremeReactors/ReactorControl/) - Simple program to control a reactor with little efficiency loss
     - [ReactorAlarm](./ExtremeReactors/ReactorAlarm/) - Program that sounds an alarm when the fuel level of a reactor is low
