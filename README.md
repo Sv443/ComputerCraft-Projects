@@ -29,4 +29,4 @@ This contains all of my ComputerCraft (Lua) projects, like farms, gadgets and pr
     - [NTP-Clock](./NTP/NTP-Clock) - A clock that displays the ingame time, day and day of the week
 - [RedstoneGates](./RedstoneGates/) - Various configurable redstone gates and circuits that are computer based
     - [AND, OR, NOT, etc.](./RedstoneGates#basic-gates) - Basic gates like AND, OR, NOT, etc.
-    - [S/R Latch, Sequencer, etc.](./RedstoneGates#advanced-gates) - Advanced or stateful gates like S/R Latch, Sequencer, etc.
+    - [S/R Latch, Sequencer, Delayer, etc.](./RedstoneGates#advanced-gates) - Advanced or stateful gates like S/R Latch, Sequencer, Delayer, etc.
