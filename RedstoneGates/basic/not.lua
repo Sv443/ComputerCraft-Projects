@@ -1,10 +1,16 @@
+-- Redstone input side
 INPUT = "left"
 
-OUTPUT = "right"
+-- Redstone output side
+OUTPUT = "back"
 
-INTERVAL = 0.05
+-- How often to check for changes, in seconds
+-- Has to be a multiple of 0.05 (1 game tick)
+CHECK_INTERVAL = 0.05
 
 function run()
+    print("\n| NOT gate by Sv443")
+    print("| https://github.com/Sv443/ComputerCraft-Projects\n")
     local outVal
     while true do
         local a = redstone.getInput(INPUT)
@@ -16,7 +22,7 @@ function run()
         end
 
         redstone.setOutput(OUTPUT, outVal)
-        os.sleep(INTERVAL)
+        os.sleep(CHECK_INTERVAL)
     end
 end
 

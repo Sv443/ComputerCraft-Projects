@@ -21,13 +21,10 @@ To install one of these gates, run one of the commands from below:
 
 | Gate | Install command |
 | --- | --- |
-| AND | `pastebin get uEnJy4R8 startup.lua` |
-| OR | `pastebin get CizrcGFt startup.lua` |
-| NAND | `-` |
-| NOR | `-` |
-| XOR | `-` |
-| XNOR | `-` |
-| NOT | `pastebin get xeyAKMRp startup.lua` |
+| AND / NAND | `pastebin get 4KSvxN75 startup.lua` |
+| OR / NOR | `pastebin get Ss10r84Z startup.lua` |
+| XOR / XNOR | `pastebin get tgx2aquv startup.lua` |
+| NOT | `pastebin get EsveraQn startup.lua` |
 
 <br>
 

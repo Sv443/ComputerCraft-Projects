@@ -5,7 +5,7 @@ INPUT_B = "right"
 -- Redstone output side
 OUTPUT = "back"
 
--- Set to true to turn this OR gate into a NOR gate
+-- Set to true to turn this XOR gate into a XNOR gate
 OUTPUT_INVERTED = false
 
 -- How often to check for changes, in seconds
@@ -13,14 +13,14 @@ OUTPUT_INVERTED = false
 CHECK_INTERVAL = 0.05
 
 function run()
-    print("\n| OR / NOR gate by Sv443")
+    print("\n| XOR / XNOR gate by Sv443")
     print("| https://github.com/Sv443/ComputerCraft-Projects\n")
     local outVal
     while true do
         local a = redstone.getInput(INPUT_A)
         local b = redstone.getInput(INPUT_B)
 
-        if a or b then
+        if a and not b or not a and b then
             outVal = not OUTPUT_INVERTED
         else
             outVal = OUTPUT_INVERTED
