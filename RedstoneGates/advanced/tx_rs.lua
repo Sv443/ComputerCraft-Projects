@@ -5,7 +5,7 @@ INTERVAL = 0.1
 INPUT_SIDE = "left"
 
 -- Port to transmit on
-TRANSMIT_PORT = 2024
+TRANSMIT_PORT = 201824
 
 
 
