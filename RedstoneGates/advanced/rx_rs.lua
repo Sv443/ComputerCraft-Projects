@@ -2,7 +2,7 @@
 INTERVAL = 0.1
 
 -- Port to receive on
-RECEIVE_PORT = 201824
+RECEIVE_PORT = 1820
 
 
 
