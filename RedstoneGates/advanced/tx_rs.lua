@@ -9,7 +9,9 @@ TRANSMIT_PORT = 201824
 
 
 
-local modem = peripheral.find("modem") or error("No modem attached", 0)
+-- Do not edit below or cobuder gets angy >:(
+
+local modem = peripheral.find("modem") or error("\n> No modem attached!\n", 0)
 modem.open(TRANSMIT_PORT)
 
 local lastSig = nil
