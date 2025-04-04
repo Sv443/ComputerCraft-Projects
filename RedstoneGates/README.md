@@ -37,8 +37,10 @@ To install one of these gates, run one of the commands from below:
 | S/R Latch | `pastebin get 1CPbvG3s startup.lua` | &bull; Configurable post-change delay |
 | Sequencer | `pastebin get fzZgHDkp startup.lua` | &bull; Fully configurable redstone sequence on all sides<br>&bull; Optional single-shot mode |
 | Delayer | `pastebin get L5a8CSvU startup.lua` | &bull; Fully configurable rising & falling edge delay<br>&bull; Optional invertable output signal |
-| State Toggle | `pastebin get 2ZJEXLhp startup.lua` | &bull; State machine that switches between preconfigured states when toggled<br>&bull; Configurable delays before and after setting signals<br>&bull; Configurable cooldown |
-| Pulse Extender | TODO | TODO |
+| State&nbsp;Toggle | `pastebin get 2ZJEXLhp startup.lua` | &bull; State machine that switches between preconfigured states when toggled<br>&bull; Configurable delays before and after setting signals<br>&bull; Configurable cooldown |
+| Wireless&nbsp;Redstone&nbsp;Transmitter | `pastebin get FWxn5jJv startup.lua` | &bull; Transmits a redstone signal (0-15) via wireless modem |
+| Wireless&nbsp;Redstone&nbsp;Receiver | `pastebin get NKzz7pWW startup.lua` | &bull; Receives a wireless redstone signal and prints it to the console<br>&bull; Integrated time measurement between signal changes<br>&bull; Designed to fit on a pocket computer screen |
+| Pulse&nbsp;Extender | TODO | TODO |
 
 <br>
 
