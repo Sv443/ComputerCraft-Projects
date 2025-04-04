@@ -34,11 +34,11 @@ To install one of these gates, run one of the commands from below:
 
 | Gate | Install command | Special features |
 | --- | --- | --- |
-| S/R Latch | `pastebin get 1CPbvG3s startup.lua` | Configurable post-change delay |
+| S/R Latch | `pastebin get 1CPbvG3s startup.lua` | &bull; Configurable post-change delay |
 | Sequencer | `pastebin get fzZgHDkp startup.lua` | &bull; Fully configurable redstone sequence on all sides<br>&bull; Optional single-shot mode |
 | Delayer | `pastebin get L5a8CSvU startup.lua` | &bull; Fully configurable rising & falling edge delay<br>&bull; Optional invertable output signal |
-| State Toggle | `pastebin get 2ZJEXLhp startup.lua` | &bull; Fully configurable state machine that toggles between different preconfigured states<br>&bull; Configurable delays before and after setting signals |
-| Pulse Extender | `-` | - |
+| State Toggle | `pastebin get 2ZJEXLhp startup.lua` | &bull; State machine that switches between preconfigured states when toggled<br>&bull; Configurable delays before and after setting signals<br>&bull; Configurable cooldown |
+| Pulse Extender | TODO | TODO |
 
 <br>
 
