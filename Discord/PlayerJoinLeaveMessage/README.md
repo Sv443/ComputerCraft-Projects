@@ -21,7 +21,7 @@ After creating a webhook and copying the URL, install the program in-game:
 ```
 label set discord_join_leave_message
 pastebin get 4nRg9CHU json
-pastebin get xyz startup.lua
+pastebin get zFs6NZJw startup.lua
 edit startup.lua
 ```
 3. At the top, enter your server's IP and port and the Discord webhook URL
