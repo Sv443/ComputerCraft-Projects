@@ -20,7 +20,7 @@ Afterwards, run the command `reboot` to automatically start the program.
 To install one of these gates, run one of the commands from below:
 
 | Gate | Install command |
-| --- | --- |
+| :-- | :-- |
 | AND / NAND | `pastebin get 4KSvxN75 startup.lua` |
 | OR / NOR | `pastebin get Ss10r84Z startup.lua` |
 | XOR / XNOR | `pastebin get tgx2aquv startup.lua` |
@@ -32,12 +32,12 @@ To install one of these gates, run one of the commands from below:
 These gates are a bit more advanced as they are stateful or have special functionality beyond simple logic.  
 To install one of these gates, run one of the commands from below:
 
-| Gate | Install command | Special features |
-| --- | --- | --- |
+| Gate | Install command | Features |
+| :-- | :-- | :-- |
 | S/R Latch | `pastebin get 1CPbvG3s startup.lua` | &bull; Configurable post-change delay |
 | Sequencer | `pastebin get fzZgHDkp startup.lua` | &bull; Fully configurable redstone sequence on all sides<br>&bull; Optional single-shot mode |
 | Delayer | `pastebin get L5a8CSvU startup.lua` | &bull; Fully configurable rising & falling edge delay<br>&bull; Optional invertable output signal |
-| State&nbsp;Toggle | `pastebin get 2ZJEXLhp startup.lua` | &bull; State machine that switches between preconfigured states when toggled<br>&bull; All sides configurable<br>&bull; Configurable delays before and after setting signals<br>&bull; Configurable cooldown<br>&bull; Single toggle on pulse, continuous toggling on continuously high input signal |
+| State&nbsp;Toggle | `pastebin get 2ZJEXLhp startup.lua` | &bull; Steps through a list of preconfigured states when pulsed<br>&bull; Configurable delays before and after setting signals<br>&bull; Configurable cooldown<br>&bull; Single toggle on pulse, continuous toggling on continuously high input signal |
 | Wireless&nbsp;Redstone&nbsp;Transmitter | `pastebin get FWxn5jJv startup.lua` | &bull; Transmits a redstone signal (0-15) via wireless modem |
 | Wireless&nbsp;Redstone&nbsp;Receiver | `pastebin get NKzz7pWW startup.lua` | &bull; Receives a wireless redstone signal and prints it to the console<br>&bull; Integrated time measurement between signal changes<br>&bull; Designed to fit on a pocket computer screen |
 | Pulse&nbsp;Extender | TODO | TODO |
