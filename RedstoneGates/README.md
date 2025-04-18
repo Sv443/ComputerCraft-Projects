@@ -9,7 +9,7 @@ All gates can be configured to your needs. After downloading the program, run `e
 If the program is running, hold <kbd>Ctrl</kbd> <kbd>T</kbd> to stop it first.  
   
 At the top you will find variables which you can configure to your needs.  
-The interval setting has to be a multiple of `0.05` (which is 1 tick or 1/20th of a second).  
+The interval setting has to be a multiple of `0.1` (which is 1 redstone tick).  
   
 After you've finished, press <kbd>Ctrl</kbd>, select `[Save]` and press <kbd>Enter</kbd>, then press <kbd>Ctrl</kbd> again, select `[Exit]` and press <kbd>Enter</kbd>  
 Afterwards, run the command `reboot` to automatically start the program.
