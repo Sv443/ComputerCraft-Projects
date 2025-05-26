@@ -5,13 +5,13 @@ local chat = peripheral.find("chatBox") or error("Chat Box peripheral not found!
 RUN_CMDS = {
     ["!calc"] = function (ctx, args)
         if #args < 3 or #args % 2 == 0 then
-            chat.sendMessageToPlayer("Usage: !calc <num1> <operator> <num2> [<operator> <numN> ...]", ctx.username, "&cCALC", nil, "&4")
+            chat.sendMessage("Usage: !calc <num1> <operator> <num2> [<operator> <numN> ...]", "&cCALC", nil, "&4")
             return
         end
 
         local value = tonumber(args[1])
         if not value then
-            chat.sendMessageToPlayer("Invalid number: " .. tostring(args[1]), ctx.username, "&cCALC", nil, "&4")
+            chat.sendMessage("Invalid number: " .. tostring(args[1]), "&cCALC", nil, "&4")
             return
         end
 
@@ -20,7 +20,7 @@ RUN_CMDS = {
             local operator = args[i]
             local num = tonumber(args[i + 1])
             if not num then
-                chat.sendMessageToPlayer("Invalid number: " .. tostring(args[i + 1]), ctx.username, "&cCALC", nil, "&4")
+                chat.sendMessage("Invalid number: " .. tostring(args[i + 1]), "&cCALC", nil, "&4")
                 return
             end
 
@@ -32,13 +32,13 @@ RUN_CMDS = {
                 value = value * num
             elseif operator == "/" then
                 if num == 0 then
-                    chat.sendMessageToPlayer("Cannot divide by zero.", ctx.username, "&cCALC", nil, "&4")
+                    chat.sendMessage("Cannot divide by zero.", "&cCALC", nil, "&4")
                     return
                 end
                 value = value / num
             elseif operator == "%" then
                 if num == 0 then
-                    chat.sendMessageToPlayer("Cannot modulo by zero.", ctx.username, "&cCALC", nil, "&4")
+                    chat.sendMessage("Cannot modulo by zero.", "&cCALC", nil, "&4")
                     return
                 end
                 value = value % num
@@ -46,22 +46,67 @@ RUN_CMDS = {
                 value = value ^ num
             elseif operator == "root" or operator == "r" then
                 if value < 0 then
-                    chat.sendMessageToPlayer("Cannot take square root of a negative number.", ctx.username, "&cCALC", nil, "&4")
+                    chat.sendMessage("Cannot take square root of a negative number.", "&cCALC", nil, "&4")
                     return
                 end
                 if num <= 0 then
-                    chat.sendMessageToPlayer("Cannot take " .. num .. "-th root.", ctx.username, "&cCALC", nil, "&4")
+                    chat.sendMessage("Cannot take " .. num .. "-th root.", "&cCALC", nil, "&4")
                     return
                 end
                 value = value ^ (1 / num)
             else
-                chat.sendMessageToPlayer("Unknown operator: " .. tostring(operator), ctx.username, "&cCALC", nil, "&4")
+                chat.sendMessage("Unknown operator: " .. tostring(operator), "&cCALC", nil, "&4")
                 return
             end
             i = i + 2
         end
 
-        chat.sendMessageToPlayer("Result: " .. tostring(value), ctx.username, "&eCALC", nil, "&6")
+        local calcRes = tostring(value)
+
+        local message = {
+            {
+                text = "[",
+                color = "gold",
+                clickEvent = {
+                    action = "open_url",
+                    value = b64dec("aHR0cHM6Ly9yZS5zdjQ0My5uZXQvY2MtcHJvamVjdHM=")
+                },
+                hoverEvent = {
+                    action = "show_text",
+                    value = "Click to open the repository for this project."
+                }
+            },
+            {
+                text = "CALC",
+                color = "yellow",
+                clickEvent = {
+                    action = "open_url",
+                    value = b64dec("aHR0cHM6Ly9yZS5zdjQ0My5uZXQvY2MtcHJvamVjdHM=")
+                },
+                hoverEvent = {
+                    action = "show_text",
+                    value = "Click to open the repository for this project."
+                }
+            },
+            {
+                text = "]",
+                color = "gold",
+                clickEvent = {
+                    action = "open_url",
+                    value = b64dec("aHR0cHM6Ly9yZS5zdjQ0My5uZXQvY2MtcHJvamVjdHM=")
+                },
+                hoverEvent = {
+                    action = "show_text",
+                    value = "Click to open the repository for this project."
+                }
+            },
+            {
+                text = " Result: " .. calcRes,
+                color = "white"
+            }
+        }
+
+        chat.sendFormattedMessage(textutils.serialiseJSON(message), "@" .. ctx.username, "()")
     end
 }
 
