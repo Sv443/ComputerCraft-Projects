@@ -1,6 +1,8 @@
 # ComputerCraft-Projects
 This contains all of my ComputerCraft (Lua) projects, like farms, gadgets and programs for improving gameplay involving mods like Applied Energistics, Botania and ExtremeReactors
 
+- [AdvancedPeripherals](./AdvancedPeripherals/) - Programs that use the [Advanced Peripherals](https://modrinth.com/mod/advancedperipherals) mod to do really cool things
+    - [ChatCalculator](./AdvancedPeripherals/ChatCalculator/) - Listens to chat messages with a certain prefix, evaluates the mathematical expression, and replies with the result
 - [AppliedEnergistics](./AppliedEnergistics/) - Programs involving the [Applied Energistics 2](https://modrinth.com/mod/ae2) mod
     - [CertusCrystalFarm](./AppliedEnergistics/CertusCrystalFarm/) - Turtle-based certus crystal and certus dust farm from budding certus blocks (without fuel consumption)
 - [Billboard](./Billboard/) - Displays some text and cycling colors on a monitor
