@@ -11,6 +11,7 @@ The supported operators are: `+`, `-`, `*`, `/`, `%`, `^` or `**`, `root` or `r`
   
 - Specify the number of the root after the operator, e.g. `!calc 1 + 8 root 2` for the square root of 9, which is 3
 - The expression is always evaluated left to right, so `!calc 2 + 2 * 2` will yield `8`, not `6`
+- Having a whitespace between numbers and operators is required
 
 <br>
 
