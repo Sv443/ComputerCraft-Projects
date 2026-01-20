@@ -1,9 +1,9 @@
 # ComputerCraft-Projects
 This contains all of my ComputerCraft (Lua) projects, like farms, gadgets and programs for improving gameplay involving mods like Applied Energistics, Botania and ExtremeReactors
 
-- [AdvancedPeripherals](./AdvancedPeripherals/) - Programs that use the [Advanced Peripherals](https://modrinth.com/mod/advancedperipherals) mod to do really cool things
+- [AdvancedPeripherals](./AdvancedPeripherals/) - Programs that use the [Advanced Peripherals mod](https://modrinth.com/mod/advancedperipherals) to do really cool things
     - [ChatCalculator](./AdvancedPeripherals/ChatCalculator/) - Listens to chat messages with a certain prefix, evaluates the mathematical expression, and replies with the result
-- [AppliedEnergistics](./AppliedEnergistics/) - Programs involving the [Applied Energistics 2](https://modrinth.com/mod/ae2) mod
+- [AppliedEnergistics](./AppliedEnergistics/) - Programs involving the [Applied Energistics 2 mod](https://modrinth.com/mod/ae2)
     - [CertusCrystalFarm](./AppliedEnergistics/CertusCrystalFarm/) - Turtle-based certus crystal and certus dust farm from budding certus blocks (without fuel consumption)
 - [Billboard](./Billboard/) - Displays some text and cycling colors on a monitor
 - [Botania](./Botania/) - Various controllers and analytical tools for the Botania mod
@@ -11,6 +11,8 @@ This contains all of my ComputerCraft (Lua) projects, like farms, gadgets and pr
     - [TODO: ManaPoolStats](./Botania/ManaPoolStats/) - Collects statistics about how much mana is collected in which amount of time
     - [TODO: GourmaryllisControl](./Botania/GourmaryllisControl/) - Controls an optimal setup for 1 to infinite gourmaryllis flowers, generating mana from food
     - [TODO: ThermalilyControl](./Botania/ThermalilyControl/) - Controls a setup for 1 to infinite thermalily flowers, generating mana from lava
+- [Create](./Create/) - Programs involving the [Create mod](https://modrinth.com/mod/create)
+    - [TODO: TrafficLight](./Create/TrafficLight/) - Traffic light controller for Create Train intersections with 3 or 4 exits
 - [Discord](./Discord/) - Various programs involving sending Discord messages from within Minecraft
 - [Displays](./Displays/) - Miscellaneous computer-powered displays
     - [ContainerLevel](./Displays/ContainerLevel/) - Displays the fill level of any comparator-supporting container on a monitor
