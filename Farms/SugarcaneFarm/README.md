@@ -30,6 +30,7 @@ Additionally, the program has a feature to return to the refueling station using
   If any block is in the way, it will give up and shut down and you will need to manually re-place the turtle on the refueling station.
 - You may open the turtle every now and again to see its stats, which it will print every time it refuels after finishing a harvesting cycle.
 - To reset the stats, hold <kbd>Ctrl</kbd> + <kbd>T</kbd> then run the command `rm farm_stats.txt` and then run `reboot` to start the harvesting program again.
+- If you get GPS errors despite having GPS servers set up, try running `gps locate` in the turtle. If the position is ambiguous, place the GPS server computers further apart and/or on different Y levels, and make sure there's at least 4 of them.
 
 <br>
 
