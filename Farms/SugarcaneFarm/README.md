@@ -23,6 +23,7 @@ Additionally, the program has a feature to return to the refueling station using
 - Make sure the entire row of the y axis that the barrels/chests are on is empty, as the turtle will move there to deposit the sugarcane
 - Also make sure there is enough air above the farm if you are using the auto-home feature.
   The exact height can be changed in the settings, but 2 blocks of air above the sugarcane is the minimum and default setting.
+- If you're using a mod that speeds up sugar cane or cactus growth by a large amount (like [Snad](https://modrinth.com/mod/snad)), add 1 to the Y distance setting to make sure the turtle doesn't get stuck while moving to the dropoff point.
 
 ### Less important info:
 - When the auto-home feature is triggered, the turtle will move up (2 blocks by default) so it doesn't get stuck, then move in an L-shape to the refueling station, starting with the x-axis.  
@@ -45,8 +46,7 @@ label set sugarcane_farm
 pastebin get 1G6qAMMt startup.lua
 edit startup.lua
 ```
-5. Change the settings at the top of the file to match your farm size, fuel item and growing speed (if you have a mod that changes the growing speed of sugarcane, like PneumaticCraft, which I used in the screenshot above)  
-  Just make sure the sugarcane doesn't grow faster than the turtle takes to move the full length in the X axis or it will get stuck!
+5. Change the settings at the top of the file to match your farm size, fuel item and growing speed (if you have a mod that changes the growing speed of sugarcane, like PneumaticCraft, which I used in the screenshot above)
 6. Press <kbd>Ctrl</kbd>, select `[Save]` and press <kbd>Enter</kbd>, then press <kbd>Ctrl</kbd> again, select `[Exit]` and press <kbd>Enter</kbd>  
 7. Run the command `reboot` to start the program
 8. Confirm setting the home position with <kbd>Enter</kbd> once it is placed on the refueling station in the correct orientation
